@@ -17,5 +17,10 @@ pipeline {
         sh 'npm test --watchAll=false'
       }
     }
+    stage('Create docker image') {
+      steps {
+        sh 'docker build -t demo .'
+      }
+    }
   }
 }
